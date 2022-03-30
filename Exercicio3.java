@@ -1,15 +1,16 @@
-public class Exercicio1 {
+public class Exercicio3 {
     public static void main(String[] args){
         int numeros[] = {16, 23, 55, 11, 85, 36, 77, 59, 66, 29};
         
         for(int i = 0;i < numeros.length;i++){
-            int divisor = numeros[i] - 1;
-            while(divisor > 1){
-                if((numeros[i] % divisor--) == 0) {
+            boolean ePrimo = true;
+            for(int valor = 2;valor < numeros[i];valor++){
+                if(numeros[i] % valor == 0){
+                    ePrimo = false;
                     break;
                 }
             }
-            if(divisor == 1) {
+            if(ePrimo){
                 System.out.println(numeros[i]);
             }
         }
